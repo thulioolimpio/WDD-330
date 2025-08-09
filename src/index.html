@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sleep Outside | Home</title>
     <link rel="stylesheet" href="./css/style.css" />
+   
   </head>
 
   <body>
@@ -60,7 +61,6 @@
       <section class="products">
         <h2>Top Products</h2>
         
-        <!-- Controles de ordenação adicionados aqui -->
         <div class="sort-controls">
           <label for="sort-by">Sort by:</label>
           <select id="sort-by">
@@ -83,6 +83,7 @@
               <h2 class="card__name">Ajax Tent - 3-Person, 3-Season</h2>
               <p class="product-card__price">$199.99</p>
             </a>
+            <button class="quick-view" data-product-id="880rr">Quick View</button>
           </li>
           <li class="product-card">
             <a href="product_pages/northface-talus-4.html">
@@ -94,6 +95,7 @@
               <h2 class="card__name">Talus Tent - 4-Person, 3-Season</h2>
               <p class="product-card__price">$199.99</p>
             </a>
+            <button class="quick-view" data-product-id="985rf">Quick View</button>
           </li>
           <li class="product-card">
             <a href="product_pages/northface-alpine-3.html">
@@ -105,6 +107,7 @@
               <h2 class="card__name">Alpine Guide Tent - 3-Person, 4-Season</h2>
               <p class="product-card__price">$349.99</p>
             </a>
+            <button class="quick-view" data-product-id="985pr">Quick View</button>
           </li>
           <li class="product-card">
             <a href="product_pages/cedar-ridge-rimrock-2.html">
@@ -116,16 +119,30 @@
               <h2 class="card__name">Rimrock Tent - 2-Person, 3-Season</h2>
               <p class="product-card__price">$69.99</p>
             </a>
+            <button class="quick-view" data-product-id="344yj">Quick View</button>
           </li>
         </ul>
       </section>
     </main>
+
+    
+   <!-- Modal de Quick View -->
+    <div id="quickViewModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="" class="modal-image">
+        <h2 id="modalTitle"></h2>
+        <p id="modalBrand" class="modal-brand"></p>
+        <p id="modalPrice" class="modal-price"></p>
+        <a id="modalLink" href="#" class="modal-link">View Details</a>
+      </div>
+    </div>
+
     <footer>
       &copy;2025 ⛺ SleepOutside ⛺ WDD 330 ⛺ BYU-Idaho for BYU-Pathway
       Worldwide Online
     </footer>
 
-    <!-- Adicione este script antes do fechamento do body -->
-    <script src="./js/main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

@@ -12,6 +12,42 @@ document.addEventListener('DOMContentLoaded', function() {
     const priceText = product.querySelector('.product-card__price').textContent;
     return parseFloat(priceText.replace(/[^\d.]/g, ''));
   }
+  // Abre o modal com os dados do produto
+document.querySelectorAll('.quick-view').forEach(button => {
+  button.addEventListener('click', () => {
+    const productCard = button.closest('.product-card');
+    const product = {
+      image: productCard.querySelector('img').src,
+      brand: productCard.querySelector('.card__brand').textContent,
+      name: productCard.querySelector('.card__name').textContent,
+      price: productCard.querySelector('.product-card__price').textContent,
+      link: productCard.querySelector('a').href
+    };
+    openModal(product);
+  });
+});
+
+function openModal(product) {
+  const modal = document.getElementById('quickViewModal');
+  document.getElementById('modalImage').src = product.image;
+  document.getElementById('modalTitle').textContent = product.name;
+  document.getElementById('modalBrand').textContent = product.brand;
+  document.getElementById('modalPrice').textContent = product.price;
+  document.getElementById('modalLink').href = product.link;
+  modal.style.display = 'block';
+}
+
+// Fecha o modal
+document.querySelector('.close').addEventListener('click', () => {
+  document.getElementById('quickViewModal').style.display = 'none';
+});
+
+// Fecha ao clicar fora do modal
+window.addEventListener('click', (event) => {
+  if (event.target === document.getElementById('quickViewModal')) {
+    document.getElementById('quickViewModal').style.display = 'none';
+  }
+});
   
   // Função para ordenar produtos
   function sortProducts(sortOption) {
